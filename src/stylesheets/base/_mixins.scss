@@ -1,0 +1,39 @@
+// ------------------------------------------------------------
+// MIXINS
+// ------------------------------------------------------------
+
+// -------------------------
+// Basics
+// -------------------------
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin absolute {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left:0;
+  margin: auto;
+}
+
+@mixin fixed {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left:0;
+  margin: auto;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin visible(){
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin unselectable {
+  cursor: default;
+  user-select: none;
+}

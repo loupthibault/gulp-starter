@@ -3,7 +3,7 @@ var compact = require('lodash/compact');
 var forEach = require('lodash/forEach');
 
 // Grouped by what can run in parallel
-var assetTasks = ['fonts', 'iconFont', 'images'];
+var assetTasks = ['fonts', 'iconFont', 'images', 'static'];
 var codeTasks = ['html', 'css', 'js'];
 var preCodeTasks = ['svgSprite'];
 

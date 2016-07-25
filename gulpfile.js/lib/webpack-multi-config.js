@@ -4,7 +4,6 @@ if(!config.tasks.js) return;
 var path            = require('path');
 var pathToUrl       = require('./pathToUrl');
 var webpack         = require('webpack');
-var webpackManifest = require('./webpackManifest');
 
 module.exports = function(env) {
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src);
@@ -15,8 +14,7 @@ module.exports = function(env) {
     return '.' + extension;
   })
 
-  var rev = config.tasks.production.rev && env === 'production';
-  var filenamePattern = rev ? '[name]-[hash].js' : '[name].js';
+  var filenamePattern = '[name].js';
 
   var webpackConfig = {
     context: jsSrc,
@@ -71,9 +69,7 @@ module.exports = function(env) {
   }
 
   if(env === 'production') {
-    if(rev) {
-      webpackConfig.plugins.push(new webpackManifest(publicPath, config.root.dest));
-    }
+
     webpackConfig.plugins.push(
       new webpack.DefinePlugin({
         'process.env': {

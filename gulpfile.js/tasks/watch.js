@@ -11,8 +11,8 @@ var watchTask = function() {
     if(task) {
       var glob = path.join(config.root.src, task.src, '**/*.{' + task.extensions.join(',') + '}')
       watch(glob, function() {
-       require('./' + taskName)()
-      })
+       require('./' + taskName)();
+     });
     }
   });
 };

@@ -1,1 +1,27 @@
 @import 'normalize';
+@import 'base/_vars';
+@import "base/_mixins";
+@import 'base/_medias';
+@import 'base/_fonts';
+@import 'base/_typography';
+
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+
+	text-rendering: optimizeLegibility;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html,
+body{
+	overflow: hidden;
+  background: $base-background;
+  backface-visibility: hidden;
+}

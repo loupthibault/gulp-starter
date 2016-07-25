@@ -6,8 +6,7 @@
     "start": "gulp",
     "gulp": "gulp",
     "development": "gulp",
-    "production": "gulp production",
-    "deploy": "gulp deploy"
+    "production": "gulp production"
   },
   "author": "Loup THIBAULT",
   "license": "MIT",

@@ -5,6 +5,21 @@
   },
 
   "tasks": {
+
+    "js": {
+      "src": "javascripts",
+      "dest": "javascripts",
+      "entries": {
+        "app": ["./main.js"]
+      },
+      "extensions": ["js", "json"],
+      "babel": {
+        "presets": ["es2015"],
+        "plugins": []
+      },
+      "extractSharedJs": false
+    },
+
     "browserSync": {
       "server": {
         "baseDir": "public"
@@ -16,25 +31,11 @@
       "dest": "./"
     },
 
-    "js": {
-      "src": "javascripts",
-      "dest": "javascripts",
-      "entries": {
-        "app": ["./app.js"]
-      },
-      "extensions": ["js", "json"],
-      "babel": {
-        "presets": ["es2015"],
-        "plugins": []
-      },
-      "extractSharedJs": false
-    },
-
     "css": {
       "src": "stylesheets",
       "dest": "stylesheets",
       "autoprefixer": {
-        "browsers": ["last 3 version"]
+        "browsers": ["last 2 versions"]
       },
       "sass": {
         "indentedSyntax": false,
@@ -42,7 +43,7 @@
           "./node_modules/normalize.css"
         ]
       },
-      "extensions": ["scss", "css"]
+      "extensions": ["scss, css"]
     },
 
     "html": {
@@ -81,10 +82,6 @@
       "src": "sprites",
       "dest": "images",
       "extensions": ["svg"]
-    },
-
-    "production" : {
-      "rev": true
     }
   }
 }

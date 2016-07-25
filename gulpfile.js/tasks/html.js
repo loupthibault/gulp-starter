@@ -30,15 +30,12 @@ var htmlTask = function() {
     .on('error', handleErrors)
     .pipe(render({
       path: [path.join(config.root.src, config.tasks.html.src)],
-      envOptions: {
-        watch: false
-      }
+      envOptions: { watch: false }
     }))
     .on('error', handleErrors)
-    .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
+    .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin))) // minify if production
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream());
-
 };
 
 gulp.task('html', htmlTask);
