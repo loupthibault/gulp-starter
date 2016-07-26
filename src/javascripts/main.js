@@ -1,3 +1,3 @@
 import config from 'config';
 
-console.log('Main.js');
+console.log("%c" + "░▒▓████▓▒░ Gulp-starter ░▒▓████▓▒░", "color: #333333;font-weight:normal;");
