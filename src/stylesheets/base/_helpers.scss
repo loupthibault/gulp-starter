@@ -1,0 +1,78 @@
+// ------------------------------------------------------------
+// HELPERS
+// ------------------------------------------------------------
+
+// -------------------------
+// Display
+// -------------------------
+
+.u-inactive {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.u-hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/*
+  Hide only visually, but have it available for screen readers:
+  http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*/
+.u-visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  color: #757575;
+}
+
+/*
+  Extends the .visuallyhidden class to allow the element
+  to be focusable when navigated to via the keyboard:
+  https://www.drupal.org/node/897638
+*/
+.u-visuallyHidden--focusable:active,
+.u-visuallyHidden--focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  opacity: 0;
+}
+
+// -------------------------
+// Interaction
+// -------------------------
+
+.u-unselectable {
+  cursor: default;
+  user-select: none;
+}
+
+.u-unclickable {
+  pointer-events: none;
+  cursor: default;
+}
+
+// -------------------------
+// Size & position
+// -------------------------
+
+.u-vertical-center {
+  position: relative;
+	display: table;
+	@include size(100%);
+
+	.u-vertical-el {
+		display: table-cell;
+		vertical-align: middle
+	}
+}

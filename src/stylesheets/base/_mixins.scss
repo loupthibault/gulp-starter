@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // ------------------------------------------------------------
 // MIXINS
 // ------------------------------------------------------------
@@ -6,9 +7,22 @@
 // Basics
 // -------------------------
 
-@mixin size($width, $height) {
+@mixin size($value) {
+  $width: nth($value, 1);
+  $height: $width;
+
+  @if length($value) > 1 {
+    $height: nth($value, 2);
+  }
+
   width: $width;
   height: $height;
+}
+
+@mixin centerBlock() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin absolute {
@@ -36,4 +50,42 @@
 @mixin unselectable {
   cursor: default;
   user-select: none;
+}
+
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+// -------------------------
+// Buttons
+// -------------------------
+
+@mixin resetBtn() {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+
+  &:not(input) { user-select: none; }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }

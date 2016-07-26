@@ -1,6 +1,7 @@
 @import 'normalize';
 @import 'base/_vars';
 @import "base/_mixins";
+@import "base/_helpers";
 @import 'base/_medias';
 @import 'base/_fonts';
 @import 'base/_typography';
@@ -24,4 +25,10 @@ body{
 	overflow: hidden;
   background: $base-background;
   backface-visibility: hidden;
+	user-select: none;
+}
+
+.page {
+	@include fixed();
+	text-align: center;
 }
